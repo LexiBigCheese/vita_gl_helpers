@@ -1,6 +1,7 @@
 use derive_more::{From, Into};
 
 use crate::{
+    attribute::{AttributeTable, MissingAttributes},
     shader::Shader,
     uniforms::{MissingUniforms, UniformTable},
 };
@@ -74,6 +75,9 @@ impl Program {
         }
     }
     pub fn get_uniform_table<T: UniformTable>(&self) -> Result<T, MissingUniforms> {
+        T::with_locations_from(self)
+    }
+    pub fn get_attribute_table<T: AttributeTable>(&self) -> Result<T, MissingAttributes> {
         T::with_locations_from(self)
     }
 }

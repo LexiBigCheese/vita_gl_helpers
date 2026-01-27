@@ -4,6 +4,7 @@ use crate::program::Program;
 
 macro_rules! uniform_def {
     ($name:ident,$accept:ty) => {
+        #[derive(Default, Clone, Copy, PartialEq, Eq)]
         pub struct $name(pub gl::types::GLint);
         impl $name {
             pub fn set(&self, to: $accept) {
@@ -20,6 +21,7 @@ macro_rules! uniform_def {
         }
     };
     ($name:ident,$accept:ty,mat) => {
+        #[derive(Default, Clone, Copy, PartialEq, Eq)]
         pub struct $name(pub gl::types::GLint);
         impl $name {
             pub fn set(&self, to: $accept, transpose: bool) {
@@ -80,6 +82,7 @@ pub trait UniformTable: Sized {
 #[macro_export]
 macro_rules! uniform_table {
     ($sname:ident,$($lname:ident : $t:ident => $lstr:expr),*) => {
+        #[derive(Default,Clone,Copy,PartialEq,Eq)]
         pub struct $sname {
             $($lname: $crate::uniforms::$t),*
         }
