@@ -1,0 +1,8 @@
+[package]
+name = "vita_gl_helpers"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+derive_more = { version = "2.1.1", features = ["from", "into", "try_from"] }
+gl = "0.14.0"

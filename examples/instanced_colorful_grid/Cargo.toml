@@ -1,0 +1,12 @@
+[package]
+name = "instanced_colorful_grid"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+gl = "0.14.0"
+vita_gl_helpers = { version = "0.1.0", path = "../.." }
+
+[package.metadata.vita]
+title_id = "GLHELPEX0"
+title_name = "Instanced Colorful Grid Example"
