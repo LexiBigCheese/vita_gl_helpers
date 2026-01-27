@@ -5,7 +5,7 @@ use gl::types::{GLsizei, GLuint};
 
 use crate::program::Program;
 
-#[derive(Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Default)]
 pub struct Attribute(pub GLuint);
 
 #[derive(Clone, Copy, PartialEq, Eq, Hash)]
@@ -95,6 +95,7 @@ pub trait AttributeTable: Sized {
 #[macro_export]
 macro_rules! attribute_table {
     ($sname:ident,$($lname:ident => $lstr:expr),*) => {
+        #[derive(Default,Clone,Copy,PartialEq,Eq)]
         pub struct $sname {
             $($lname: $crate::attribute::Attribute),*
         }
