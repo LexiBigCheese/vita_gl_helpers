@@ -57,12 +57,12 @@ uniform_def!(Uniform4iv, [i32; 4]);
 uniform_def!(UniformMatrix2fv, [f32; 4], mat);
 uniform_def!(UniformMatrix3fv, [f32; 9], mat);
 uniform_def!(UniformMatrix4fv, [f32; 16], mat);
-uniform_def!(UniformMatrix2x3fv, [f32; 6], mat);
-uniform_def!(UniformMatrix3x2fv, [f32; 6], mat);
-uniform_def!(UniformMatrix2x4fv, [f32; 8], mat);
-uniform_def!(UniformMatrix4x2fv, [f32; 8], mat);
-uniform_def!(UniformMatrix3x4fv, [f32; 12], mat);
-uniform_def!(UniformMatrix4x3fv, [f32; 12], mat);
+// uniform_def!(UniformMatrix2x3fv, [f32; 6], mat); Sadly, we don't have these :(
+// uniform_def!(UniformMatrix3x2fv, [f32; 6], mat);
+// uniform_def!(UniformMatrix2x4fv, [f32; 8], mat);
+// uniform_def!(UniformMatrix4x2fv, [f32; 8], mat);
+// uniform_def!(UniformMatrix3x4fv, [f32; 12], mat);
+// uniform_def!(UniformMatrix4x3fv, [f32; 12], mat);
 
 #[derive(Debug, From)]
 pub struct MissingUniforms(pub Vec<&'static str>);
